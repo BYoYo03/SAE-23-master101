@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/header.css' %}">
+    <link rel="stylesheet" href="{%static 'css/content.css' %}">
+    <link rel="icon" href="{%static 'favicon/favicon.ico' %}">
+    <meta charset="UTF-8">
+    <title>{% block title %}Page d'Acceuil{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <a class="logo" href="/"><img src="{%static 'image/logo.svg' %}" alt="logo"></a>
+           <div id="wrap">
+  <ul class="navbar">
+    <li>
+      <a href="#">Catégories</a>
+      <ul>
+        <li><a href="/infos_categorie">Voir Catégroies</a></li>
+        <li><a href="/ajout_categorie">Ajouter une catégories</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Client</a>
+      <ul>
+        <li><a href="/infos_client">Voir Clients</a></li>
+        <li><a href="/ajout_client">Ajouter des Clients</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Produits</a>
+      <ul>
+        <li><a href="/infos_produit">Voir Produits</a></li>
+        <li><a href="/ajout_produit_only">Ajouter des Produits</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Commandes</a>
+      <ul>
+        <li><a href="/ajout_commande_only">Faire une commande</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </header>
+        <div id="mobile_menu" class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay_content">
+                <a href="#">Produits</a>
+                <a href="#">Catégorie</a>
+                <a href="#">Commandes</a>
+                <a href="#">Client</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="{%static 'js/mobile_view.js' %}"></script>
+    {% block content %}
+        <div class="frontpage">
+            <img src="{%static 'image/front.png' %}" alt="front-page image">
+        </div>
+    {% endblock %}
+</body>
+</html>
